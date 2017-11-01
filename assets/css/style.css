@@ -1,0 +1,38 @@
+body {
+	background-color: black;
+	color: white;
+}
+
+.container {
+	margin: 100px auto;
+}
+
+#title #gameBody{
+	margin: 0 auto;
+	float: left;
+}
+
+h1, h2, h3 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+
+}
+
+.buttons {
+	text-align: center;
+	margin: 0 auto;
+}
+.answer {
+	height: 50px;
+	width: 100px;
+	text-align: center;
+}
+#startButton{
+	height: 50px;
+	width: 100px;
+
+}

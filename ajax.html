@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Single AJAX</title>
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // constructing a queryURL variable we will use instead of the literal string inside of the ajax method
+    var title = "space+jam";
+    var queryURL = "https://www.omdbapi.com/?t=" + title + "&y=&plot=short&apikey=40e9cece";
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).done(function(response) {
+      console.log(response);
+      console.log('The movie is: ' + response.Title);
+      console.log('The actors are: ' + response.Actors);
+      console.log('The movie runtime is: ' + response.Runtime);
+    });
+// ---------------------------------------------------------
+
+
+    $.ajax({
+      url: "https://www.omdbapi.com/?apikey=40e9cece&t=batman&type=movie",
+      method: "GET"
+    }).done(function(resp){
+      console.log(resp)
+      console.log('The movie is: ' + resp.Title)
+      console.log('Year is: ' + resp.Year)
+      console.log('The rating is: ' + resp.Ratings[0].Value)
+
+    })
+
+    console.log("This console.log will probably happen first because of asynchronicity.");
+    var x = 2;
+    var y = 10;
+    var z = 13;
+    console.log("We can also assign some variables and do some arithmetic while we wait too: 2 + 10 + 13 = ", x + y + z);
+  </script>
+
+  <h1>Open the console to see the fun!!</h1>
+</body>
+
+</html>
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Giphy API</title>
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // Example queryURL for Giphy API
+    var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC";
+
+    $.ajax({
+      url: queryURL,
+      method: 'GET'
+    }).done(function(response) {
+      console.log(response);
+    });
+  </script>
+
+</body>
+
+</html> -->
